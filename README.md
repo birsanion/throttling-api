@@ -22,6 +22,12 @@ This project implements a simple HTTP API with **rate limiting (throttling)** on
 
 ---
 
+## ⚙️ Configuration
+
+- The default rate limiting window duration is **1 minute** (60 seconds).
+- You can change this duration by setting the environment variable `THROTTLE_WINDOW_DURATION` (in seconds).
+
+
 ## 🚀 Getting Started
 
 ### Prerequisites
