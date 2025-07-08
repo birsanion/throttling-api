@@ -1,0 +1,49 @@
+services:
+  throttling-api:
+    build: .
+    ports:
+      - "${APP_PORT}:8888"
+    environment:
+      - DB_HOST=tcp(db:3306)
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_NAME=showpad
+      - REDIS_ADDR=redis:6379
+      - REDIS_DB=11
+    restart: on-failure
+    depends_on:
+      - redis
+      - db
+  redis:
+    image: redis:7
+    container_name: redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    command: >
+      redis-server
+      --appendonly yes
+      --appendfsync everysec
+      --save 60 1000
+      --save 300 10
+      --save 900 1
+    restart: unless-stopped
+  db:
+    image: mysql
+    restart: on-failure
+    ports:
+      - "${DB_PORT}:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_DATABASE: showpad
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - "${ADMINER_PORT}:8080"
+    environment:
+      ADMINER_DESIGN: "mvt"
+      ADMINER_DEFAULT_SERVER: "db"
+volumes:
+  redis_data:
