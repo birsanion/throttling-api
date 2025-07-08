@@ -36,19 +36,18 @@ This project implements a simple HTTP API with **rate limiting (throttling)** on
 - [Docker compose](https://docs.docker.com/compose/install/) (for local test)
 - (Optional) Redis (included via Docker Compose)
 - (Optional) MySql (included via Docker Compose)
----
+
 
 ## 🐳 Building Docker Image
 
 You can build the Docker image of the API using the provided Makefile target:
 
-```bash
-make build_docker
+
+    $  make build_docker
 
 ## Run Locally
 
-```bash
-docker-compose up -d
+    $  docker-compose up -d
 
 ## ☁️ Deployment
 
@@ -58,5 +57,4 @@ The API is deployed on an AWS server and accessible at: [http://16.171.60.125:88
 
 Test the `/foo` endpoint with a client authorization header:
 
-```bash
-curl -X GET "http://16.171.60.125:8888/foo" -H "Authorization: Bearer client-1"
+    $  curl -X GET "http://16.171.60.125:8888/foo" -H "Authorization: Bearer client-1"
