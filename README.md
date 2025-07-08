@@ -24,9 +24,8 @@ This project implements a simple HTTP API with **rate limiting (throttling)** on
 
 ## ⚙️ Configuration
 
-- The default rate limiting window duration is **1 minute** (60 seconds).
-- You can change this duration by setting the environment variable `THROTTLE_WINDOW_DURATION` (in seconds).
-
+- The default rate limiting window **duration** is **1 minute** (`1m`).
+- You can change this duration by setting the environment variable `THROTTLE_WINDOW_DURATION` using a [Go duration string format](https://pkg.go.dev/time#ParseDuration).
 
 ## 🚀 Getting Started
 
