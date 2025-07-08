@@ -15,8 +15,8 @@ This project implements a simple HTTP API with **rate limiting (throttling)** on
 - The API dynamically loads the rate limits per client from the MySQL database to enforce throttling.
 - This design allows easy updates of client rate limits without redeploying the application.
 - Two rate-limiting algorithms and storage strategies:
-  - `/foo`: Sliding Log algorithm with **persistent storage (Redis)**
-  - `/bar`: Fixed Window algorithm with **in-memory storage**
+  - `/bar`: Sliding Log algorithm with **in-memory storage**
+  - `/foo`: Fixed Window algorithm with **persistent storage (Redis)**
 - Dockerized and ready for deployment
 - Basic tests included
 
