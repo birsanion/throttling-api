@@ -42,12 +42,13 @@ This project implements a simple HTTP API with **rate limiting (throttling)** on
 
 You can build the Docker image of the API using the provided Makefile target:
 
-
     $  make build_docker
 
 ## Run Locally
 
     $  docker-compose up -d
+
+Once running, the application is accessible at: http://localhost:8888
 
 ## ☁️ Deployment
 
