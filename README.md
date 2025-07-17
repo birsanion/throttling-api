@@ -52,10 +52,10 @@ Once running, the application is accessible at: http://localhost:8888
 
 ## ☁️ Deployment
 
-The API is deployed on an AWS server and accessible at: [http://16.171.60.125:8888](http://16.171.60.125:8888)
+The API is deployed on an AWS server and accessible at: [http://throttling-2107555051.eu-north-1.elb.amazonaws.com:8888](http://throttling-2107555051.eu-north-1.elb.amazonaws.com:8888)
 
 ## 🔎 Example Test Request
 
 Test the `/foo` endpoint with a client authorization header:
 
-    $  curl -X GET "http://16.171.60.125:8888/foo" -H "Authorization: Bearer client-1"
+    $  curl -X GET "http://throttling-2107555051.eu-north-1.elb.amazonaws.com:8888/foo" -H "Authorization: Bearer client-1"
